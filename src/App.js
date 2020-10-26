@@ -1,11 +1,13 @@
 import './App.css';
-import ShowMessage from './components/ShowMessage';
+import Counter from './components/Counter';
+import ProgressBar from './components/ProgressBar';
+
 
 function App() {
   return (
     <div className="App">
-      <ShowMessage bgColor="black" />
-      <ShowMessage bgColor="gray" />
+      <ProgressBar/>
+      {/* initialCounter se le pasa como props por donde empieza el Counter */}
     </div>
   );
 }
