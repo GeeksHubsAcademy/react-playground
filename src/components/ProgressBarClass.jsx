@@ -45,6 +45,7 @@ class ProgressBar extends Component {
                 </div>
                 <button onClick={this.pauseOrResume}>{this.state.intervalId ? 'Pause' : 'Resume'}</button>
             </div>
+
         )
     }
 
