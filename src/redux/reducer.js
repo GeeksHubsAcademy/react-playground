@@ -1,6 +1,10 @@
-const { GET_ALL_MOVIES } = require("./types");
+const {
+    GET_ALL_MOVIES,
+    SET_MOVIE
+} = require("./types");
 
 const initialState = {
+    currentMovie: {},
     movies: []
 }
 const reducer = (state = initialState, action) => {
@@ -10,7 +14,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 movies: action.payload
             }
-
+        case SET_MOVIE:
+            return {
+                ...state,
+                currentMovie: action.payload
+            }
         default:
             return state
     }

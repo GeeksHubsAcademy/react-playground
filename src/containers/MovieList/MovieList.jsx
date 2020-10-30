@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { GET_ALL_MOVIES } from '../../redux/types';
+import MovieItem from '../../components/MovieItem/MovieItem';
 const MovieList = (props) => {
 
     useEffect(() => {
@@ -14,10 +14,7 @@ const MovieList = (props) => {
 
     return (
         <div>
-            {props.movies?.map(movie => <div className="movie" key={movie.id}>
-                <h3>{movie.title}</h3>
-                <img src={'https://image.tmdb.org/t/p/w185'+movie.poster_path} alt=""/>
-            </div>)}
+            {props.movies?.map(movie => <MovieItem movie={movie} />)}
         </div>
     )
 }
